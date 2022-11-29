@@ -30,12 +30,12 @@ while len(correct_guesses_list) != 50:
         if answer_state not in correct_guesses_list:
             correct_guesses_list.append(answer_state)
 
-# # state_to_learn
-# print(data)
-# need_to_learn = []
-# for num in range(50):
-#     if correct_guesses_list[num] in data["state"][num]:
-#         data.
-#         print("hi")
+# creates a file of the states that were missed
+need_to_learn = []
+for state in correct_guesses_list:
+    if state in state_list:
+        state_list.remove(state)
+    need_to_learn = state_list
 
-# print(data)
+new_data = pandas.DataFrame(need_to_learn)
+new_data.to_csv("need_to_learn.csv")
